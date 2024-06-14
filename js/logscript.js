@@ -5,8 +5,9 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     
     if (username === 'user' && password === 'pass') {
         alert('Inicio de sesión exitoso');
-        // Aquí puedes redirigir al usuario o realizar otra acción
+        window.location.href = 'dashboard.html';  // Redirige al dashboard
     } else {
         alert('Usuario o contraseña incorrectos');
     }
 });
+
