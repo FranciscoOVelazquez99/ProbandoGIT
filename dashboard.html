@@ -7,58 +7,22 @@
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-    <header>
-        <nav class="mega-menu">
-            <ul>
-                <li>
-                    <a href="#">Menu 1</a>
-                    <div class="dropdown">
-                        <div class="dropdown-content">
-                            <div class="dropdown-section">
-                                <h3>Section 1</h3>
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                            <div class="dropdown-section">
-                                <h3>Section 2</h3>
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                            <div class="dropdown-section">
-                                <h3>Section 3</h3>
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Menu 2</a>
-                    <div class="dropdown">
-                        <div class="dropdown-content">
-                            <div class="dropdown-section">
-                                <h3>Section 1</h3>
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                            <div class="dropdown-section">
-                                <h3>Section 2</h3>
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#">Menu 3</a></li>
-                <li><a href="#">Menu 4</a></li>
-            </ul>
-        </nav>
-    </header>
-    <script src="dashboard.js"></script>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Dashboard</h2>
+            <button id="theme-toggle">Cambiar Tema</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Bienvenido al Dashboard</h1>
+        <!-- Aquí va el contenido principal del dashboard -->
+    </div>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>

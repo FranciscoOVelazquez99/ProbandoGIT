@@ -1,81 +1,94 @@
+:root {
+    --background-light: #f4f4f4;
+    --text-light: #333;
+    --sidebar-light: #fff;
+    --background-dark: #2c2c2c;
+    --text-dark: #ddd;
+    --sidebar-dark: #3a3a3a;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    background: #f4f4f4;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-.mega-menu {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.mega-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.mega-menu ul li {
-    position: relative;
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
 
-.mega-menu ul li a {
-    color: #fff;
-    padding: 10px 15px;
-    display: block;
-    text-decoration: none;
+.sidebar {
+    width: 250px;
+    background: var(--sidebar-light);
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
 }
 
-.mega-menu ul li a:hover {
-    background: #444;
+.sidebar.dark-mode {
+    background: var(--sidebar-dark);
 }
 
-.mega-menu .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    display: none;
-    background: #fff;
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.mega-menu .dropdown-content {
+.sidebar-header {
     display: flex;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.mega-menu .dropdown-section {
-    flex: 1;
-    margin: 0 10px;
+.sidebar-header h2 {
+    margin: 0;
 }
 
-.mega-menu .dropdown-section h3 {
-    margin-top: 0;
+#theme-toggle {
+    background: #6e8efb;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
-.mega-menu .dropdown-section a {
-    display: block;
-    padding: 5px 0;
-    color: #333;
+#theme-toggle:hover {
+    background: #5a75d8;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 20px;
+}
+
+.sidebar-menu a {
+    color: inherit;
     text-decoration: none;
-    transition: color 0.3s;
-}
-
-.mega-menu .dropdown-section a:hover {
-    color: #6e8efb;
-}
-
-.mega-menu ul li:hover .dropdown {
     display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar-menu a:hover {
+    background: #6e8efb;
+    color: #fff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    transition: background 0.3s;
+}
+
+.main-content h1 {
+    margin-top: 0;
 }
