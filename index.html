@@ -1,29 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Panel de Control</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            background: #343a40;
+            color: white;
+            padding-top: 20px;
+        }
+        #sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+        }
+        #sidebar a:hover {
+            background: #495057;
+        }
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <form class="login-form" id="loginForm">
-            <div class="logo">
-                <img src="img/logo.png" alt="Logo">
-            </div>
-            <h2>Iniciar Sesión</h2>
-            <div class="input-group">
-                <input type="text" id="username" required>
-                <label for="username">Usuario</label>
-            </div>
-            <div class="input-group">
-                <input type="password" id="password" required>
-                <label for="password">Contraseña</label>
-            </div>
-            <button type="submit">Entrar</button>
-        </form>
+    <div id="sidebar">
+        <h2>Panel de Control</h2>
+        <a href="#section1">Inicio</a>
+        <a href="#section2">Usuarios</a>
+        <a href="#section3">Reportes</a>
+        <a href="#section4">Ajustes</a>
     </div>
-    <script src="js/logscript.js"></script>
+    <div id="content">
+        <div id="section1">
+            <h2>Inicio</h2>
+            <p>Bienvenido al panel de control.</p>
+        </div>
+        <div id="section2">
+            <h2>Usuarios</h2>
+            <p>Gestión de usuarios.</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Juan Perez</td>
+                        <td>juan@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ana Lopez</td>
+                        <td>ana@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="section3">
+            <h2>Reportes</h2>
+            <canvas id="myChart" width="400" height="200"></canvas>
+        </div>
+        <div id="section4">
+            <h2>Ajustes</h2>
+            <p>Configuración del sistema.</p>
+            <form>
+                <div class="form-group">
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Configuración del gráfico de Chart.js
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                datasets: [{
+                    label: '# de Ventas',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
+
